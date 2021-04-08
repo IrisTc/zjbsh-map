@@ -1,28 +1,29 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div class="index-title">
+      <i class="index-title-left">
+        <img src="./assets/title-left.png" alt="tag-left" />
+      </i>
+      <i class="index-title-right">
+        <img src="./assets/title-right.png" alt="tag-right" />
+      </i>
+    </div>
+    <!-- <map />
+    <router-view /> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import map from "@/views/Map.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    // map,
+  },
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+@import "./App.css";
 </style>
