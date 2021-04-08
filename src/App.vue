@@ -8,22 +8,33 @@
         <img src="./assets/title-right.png" alt="tag-right" />
       </i>
     </div>
-    <map></map>
+    <!-- <Map></Map> -->
+    <Container
+      ititle="杭州电子科"
+      iwidth=15
+      iheight=20
+      style="
+        position: absolute;
+        top: 12%;
+        right: 3%;"
+    />
     <router-view />
   </div>
 </template>
 
 <script>
-import map from "@/views/Map.vue";
+// import Map from "@/views/map.vue"
+import Container from "@/components/container.vue";
 
 export default {
   name: "App",
   components: {
-    "map": map
+    // Map,
+    Container,
   },
 };
 </script>
 
-<style scoped>
-  @import "./App.css";
+<style>
+@import "./App.css";
 </style>
