@@ -1,14 +1,28 @@
 <template>
   <div>
-    <div id="myChart" :style="{ height: '540px' }"></div>
+    <Container
+      ititle="charts"
+      iwidth=40
+      iheight=60
+      style="
+        position: absolute;
+        top: 12%;
+        right: 3%;"
+    >
+      <div id="myChart" :style="{ height: '100%' }"></div>
+    </Container>
   </div>
 </template>
 
 <script>
 // import axios from "axios";
+import Container from "@/components/container.vue";
 
 export default {
   name: "index",
+  components: {
+    Container,
+  },
 
   async created() {
     // let res = await axios.get("/maps/api.json");

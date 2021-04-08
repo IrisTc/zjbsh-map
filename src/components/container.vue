@@ -9,6 +9,7 @@
       <span class="container-title-content">{{ title }}</span>
       <b class="container-title-right">]</b>
     </div>
+    <slot></slot>
   </div>
 </template>
 

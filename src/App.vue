@@ -9,28 +9,19 @@
       </i>
     </div>
     <!-- <Map></Map> -->
-    <Container
-      ititle="杭州电子科"
-      iwidth=15
-      iheight=20
-      style="
-        position: absolute;
-        top: 12%;
-        right: 3%;"
-    />
     <router-view />
   </div>
 </template>
 
 <script>
 // import Map from "@/views/map.vue"
-import Container from "@/components/container.vue";
+// import Container from "@/components/container.vue";
 
 export default {
   name: "App",
   components: {
     // Map,
-    Container,
+    // Container,
   },
 };
 </script>
