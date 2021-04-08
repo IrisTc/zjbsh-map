@@ -8,22 +8,22 @@
         <img src="./assets/title-right.png" alt="tag-right" />
       </i>
     </div>
-    <!-- <map />
-    <router-view /> -->
+    <map></map>
+    <router-view />
   </div>
 </template>
 
 <script>
-// import map from "@/views/Map.vue";
+import map from "@/views/Map.vue";
 
 export default {
   name: "App",
   components: {
-    // map,
+    "map": map
   },
 };
 </script>
 
 <style scoped>
-@import "./App.css";
+  @import "./App.css";
 </style>
