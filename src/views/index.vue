@@ -1,41 +1,30 @@
 <template>
   <div>
-    <div id="myChart" :style="{ height: '540px' }"></div>
+    <recruitment-board id="recruitmentBoard"></recruitment-board>
+    <platform-statistic id="platformStatistic"></platform-statistic>
   </div>
 </template>
 
 <script>
-// import axios from "axios";
+import RecruitmentBoard from "./recruitmentBoard.vue";
+import PlatformStatistic from "./platformStatistic.vue";
 
 export default {
   name: "index",
+  components: {
+    RecruitmentBoard,
+    PlatformStatistic
+  },
 
   async created() {
     // let res = await axios.get("/maps/api.json");
     // console.log(res);
   },
   mounted() {
-    let myChart = this.$echarts.init(document.getElementById("myChart"));
-    console.log(myChart);
-    // var color = ["#19D672", "#FD517D"];
-    // 绘制图表
-    myChart.setOption({
-      xAxis: {
-        type: "category",
-        data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-      },
-      yAxis: {
-        type: "value",
-      },
-      series: [
-        {
-          data: [150, 230, 224, 218, 135, 147, 260],
-          type: "line",
-        },
-      ],
-    });
   },
 };
 </script>
 
-<style></style>
+<style>
+  @import "./index.css";
+</style>

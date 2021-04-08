@@ -1,0 +1,68 @@
+#scroll-title {
+  position: absolute;
+  bottom: 82%;
+  right: 3%;
+  height: 5%;
+  width: 94%;
+}
+
+#scroll-title tr {
+  background: #1f223c;
+  color: #487bff;
+  height: 35px;
+  line-height: 35px;
+  font-size: 15px;
+}
+
+#scroll-content {
+  position: absolute;
+  bottom: 7%;
+  right: 3%;
+  overflow: hidden;
+  height: 75%;
+  width: 94%;
+}
+
+#scroll-table a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#scroll-table a:visited {
+  color: #fff;
+}
+
+#scroll-table a:active {
+  color: #fff;
+}
+
+#scroll-table aside {
+  position: absolute;
+  z-index: 100;
+  width: 200px;
+  height: 60px;
+  left: 20%;
+  background: #fff;
+  padding: 10px 2px 5px;
+  border: 2px solid #f58c21;
+  border-radius: 10px 0px 10px 0;
+  box-shadow: 4px 4px 16px #555;
+  color: #555;
+  font-family: "Source Sans Pro", helvetica, sans-serif;
+  font-size: 0.8em;
+  line-height: 1.5em;
+}
+
+#scroll-table .contact {
+  display: none;
+  background: #02257c;
+  opacity: 0.9;
+  border: 2px solid #83c7e3;
+  border-radius: 25px;
+  color: #fff;
+}
+
+#scroll-table td:hover .contact {
+  display: block;
+  z-index: 1000;
+}

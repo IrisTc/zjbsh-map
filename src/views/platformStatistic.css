@@ -1,0 +1,25 @@
+#platform-content {
+  position: absolute;
+  top: 3%;
+  overflow: hidden;
+  height: 80%;
+  width: 100%;
+}
+
+#platform-table {
+  position: absolute;
+  top: 20%;
+  left: 5%;
+  height: 80%;
+  width: 90%;
+}
+
+#platform-table td {
+  font-size: 12px;
+}
+
+#platform-title {
+  background: #1f223c;
+  color: #487bff;
+  line-height: 40px;
+}
