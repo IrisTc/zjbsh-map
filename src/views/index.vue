@@ -3,8 +3,15 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
-    name: 'index'
+    name: 'index',
+
+    async created() {
+        let res = await axios.get('/maps/api.json')
+        console.log(res)
+    }
 }
 </script>
 
