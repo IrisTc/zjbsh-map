@@ -15,13 +15,11 @@
 
 <script>
 // import Map from "@/views/map.vue"
-// import Container from "@/components/container.vue";
 
 export default {
   name: "App",
   components: {
     // Map,
-    // Container,
   },
 };
 </script>

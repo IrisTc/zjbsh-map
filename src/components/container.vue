@@ -18,11 +18,11 @@ export default {
   name: "Container",
   props: {
     iwidth: {
-      type: Number,
+      type: String,
       require: true,
     },
     iheight: {
-      type: Number,
+      type: String,
       require: true,
     },
     ititle: {
@@ -107,7 +107,7 @@ export default {
   margin: -18px auto 0 auto;
   color: #83c7e3;
   font-size: 20px;
-  width: 80%;
+  width: 60%;
   display: flex;
   justify-content: space-between;
 }
@@ -125,5 +125,6 @@ export default {
   font-size: 18px;
   height: 20px;
   overflow: hidden;
+  min-height: 26px;
 }
 </style>

@@ -1,0 +1,38 @@
+#stationInfo-table-title {
+  position: absolute;
+  bottom: 82%;
+  right: 3%;
+  height: 5%;
+  width: 94%;
+}
+
+#stationInfo-table-title tr {
+  background: #1f223c;
+  color: #487bff;
+  height: 35px;
+  line-height: 35px;
+  font-size: 16px;
+}
+
+#stationInfo-content {
+  position: absolute;
+  bottom: 7%;
+  right: 3%;
+  overflow: hidden;
+  height: 75%;
+  width: 94%;
+  overflow-y: auto;
+}
+
+#stationInfo-table a {
+  color: #fff;
+  text-decoration: none;
+}
+
+#stationInfo-table a:visited {
+  color: #fff;
+}
+
+#stationInfo-table a:active {
+  color: #fff;
+}
