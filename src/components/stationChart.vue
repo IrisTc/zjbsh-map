@@ -33,7 +33,6 @@ export default {
         }
         source.push(obj);
       }
-      console.log(source)
       this.option = {
         tooltip: {},
         grid: {

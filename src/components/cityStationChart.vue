@@ -1,5 +1,5 @@
 <template>
-  <Container :ititle="city+'博士后工作站数据'" iwidth="52" iheight="40">
+  <Container :ititle="city + '博士后工作站数据'" iwidth="52" iheight="40">
     <div id="cityStationChart" :style="{ height: '100%', width: '100%' }"></div>
   </Container>
 </template>
@@ -14,7 +14,7 @@ export default {
   props: ["city", "charts"],
   data() {
     return {
-      option: {}
+      option: {},
     };
   },
   watch: {
@@ -94,7 +94,10 @@ export default {
         document.getElementById("cityStationChart")
       );
       myChart.setOption(this.option);
-      window.addEventListener("resize", function() {
+      myChart.on("click", (res) => {
+        this.$emit('clickStation', {city: res.name})
+      });
+      window.addEventListener("resize", function () {
         myChart.resize();
       });
     },
