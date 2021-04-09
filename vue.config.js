@@ -1,5 +1,5 @@
 module.exports = {
-    devtool: 'none',
+    // devtool: 'none',
     devServer: {
         proxy: 'http://zjbsh.zjhwrc.com'
     }
