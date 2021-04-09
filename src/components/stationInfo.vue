@@ -25,7 +25,7 @@
 
     <div id="stationInfo-content">
       <table id="stationInfo-table" width="100%">
-        <tr v-for="(item, index) in tableData" :key="index">
+        <tr v-for="(item, index) in units" :key="index">
           <td width="40%" align="center">
             {{ item.name }}
           </td>
@@ -64,21 +64,7 @@ export default {
   components: {
     Container,
   },
-  props: {},
-  data() {
-    return {
-      tableData: [],
-    };
-  },
-  created() {},
-  async mounted() {
-    let querCity = this.$route.query.city + "";
-    querCity = querCity === "省直部属" ? querCity : querCity.slice(0, -1);
-    let res = await this.$axios.get("/maps/api.json?city=" + querCity);
-    console.log(querCity);
-    this.tableData = res.data.data.units;
-    this.tableData = this.tableData.concat(this.tableData);
-  },
+  props: ['units']
 };
 </script>
 
