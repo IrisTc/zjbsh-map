@@ -1,0 +1,32 @@
+#title {
+  position: absolute;
+  top: 3%;
+  width: 100%;
+  height: 10%;
+}
+
+#map {
+  position: absolute;
+  top: 15%;
+  left: 3%;
+  width: 40%;
+  height: 80%;
+}
+
+#back {
+  position: absolute;
+  top: 15%;
+  left: 5%;
+  color: #26c6f0;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 0;
+  border: 0;
+  border: 2px solid #487bff;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+#back:hover {
+  background-color: #0c3e8f;
+}

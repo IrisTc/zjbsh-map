@@ -16,6 +16,6 @@ export default {
 }
 </script>
 
-<style>
-@import "./city.css";
+<style scoped>
+@import "../styles/city.css";
 </style>

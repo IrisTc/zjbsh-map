@@ -13,18 +13,16 @@ export default {
   name: "index",
   components: {
     RecruitmentBoard,
-    PlatformStatistic
+    PlatformStatistic,
   },
-
-  async created() {
-    // let res = await axios.get("/maps/api.json");
-    // console.log(res);
+  data() {
+    return {};
   },
-  mounted() {
-  },
+  created() {},
+  mounted() {},
 };
 </script>
 
-<style>
-  @import "./index.css";
+<style scoped>
+@import "../styles/index.css";
 </style>

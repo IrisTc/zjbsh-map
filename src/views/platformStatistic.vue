@@ -36,5 +36,5 @@ export default {
 </script>
 
 <style scoped>
-@import "./platformStatistic.css";
+@import "../styles/platformStatistic.css";
 </style>

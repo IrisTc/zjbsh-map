@@ -1,5 +1,5 @@
 <template>
-  <Container ititle="招聘要求" iwidth=52 iheight=40>
+  <Container ititle="招聘要求" iwidth="52" iheight="40">
     <table id="scroll-title">
       <tr>
         <th width="40%" align="center">招收单位</th>
@@ -10,46 +10,27 @@
     <div id="scroll-content">
       <div id="scroll-table">
         <table>
-          <tr>
+          <tr v-for="(item, index) in tableData" :key="index">
             <td width="40%" align="center">
               <a href="#" onClick="">
-                { item.name}
+                {{ item.name }}
                 <aside class="contact">
-                  {item.contact}
+                  {{ item.contact }}
                   <br />
-                  {item.phone}
+                  {{ item.phone }}
                   <br />
-                  {item.email}
+                  {{ item.email }}
                 </aside>
               </a>
             </td>
 
             <td width="60%" align="center">
-              { item.project_name}
+              {{ item.project_name }}
             </td>
           </tr>
         </table>
 
-        <table>
-          <tr>
-            <td width="40%" align="center">
-              <a href="#" onClick="">
-                { item.name}
-                <aside class="contact">
-                  {item.contact}
-                  <br />
-                  {item.phone}
-                  <br />
-                  {item.email}
-                </aside>
-              </a>
-            </td>
-
-            <td width="60%" align="center">
-              { item.project_name}
-            </td>
-          </tr>
-        </table>
+        <table></table>
       </div>
     </div>
   </Container>
@@ -63,21 +44,37 @@ export default {
   components: {
     Container,
   },
+  props: {},
+  data() {
+    return {
+      tableData: [],
+    };
+  },
   created() {},
-  mounted() {
-    setInterval(() => {
-      var c1 = document.getElementById("scroll-table");
-      var ca = document.getElementById("scroll-content");
-      if (ca.scrollTop >= c1.offsetHeight) {
+  async mounted() {
+    let res = await this.$axios.get("/maps/api.json");
+    this.tableData = res.data.data.infos;
+    this.tableData = this.tableData.concat(this.tableData);
+
+    let c1 = document.getElementById("scroll-table");
+    let ca = document.getElementById("scroll-content");
+    setInterval(function st() {
+      if (ca.scrollTop >= c1.offsetHeight/2) {
         ca.scrollTop = 0;
       } else {
-        ca.scrollTop++;
+        ca.scrollTop ++;
       }
+      // ca.onmouseover = function() {
+      //   clearInterval(cas);
+      // };
+      // ca.onmouseout = function() {
+      //   cas = setInterval("st()", 50);
+      // };
     }, 100);
   },
 };
 </script>
 
 <style scoped>
-@import "./recruitmentBoard.css";
+@import "../styles/recruitmentBoard.css";
 </style>

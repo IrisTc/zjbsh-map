@@ -1,6 +1,6 @@
 <template>
-  <Container ititle="博士后出入站统计" iwidth=52 iheight=40>
-    <table id="stationInfo-table-title">
+  <Container ititle="博士后出入站统计" iwidth="52" iheight="40">
+    <table id="stationInfo-table-title" width="100%">
       <tr>
         <th width="40%" align="center">
           单位名称
@@ -17,33 +17,38 @@
         <th width="10%" align="center">
           在站
         </th>
-        <th width="10%" align="center">
+        <th align="center">
           退站
         </th>
       </tr>
     </table>
 
     <div id="stationInfo-content">
-      <table id="stationInfo-table">
-        <tr>
+      <table id="stationInfo-table" width="100%">
+        <tr v-for="(item, index) in tableData" :key="index">
           <td width="40%" align="center">
-            <a href="#">{item.name}</a>
+            {{ item.name }}
           </td>
           <td width="20%" align="center">
-            {item.role === 1 ? "国家级工作站" : item.role === 2 ? "省级工作站" :
-            "流动站"}
+            {{
+              item.role === 1
+                ? "国家级工作站"
+                : item.role === 2
+                ? "省级工作站"
+                : "流动站"
+            }}
           </td>
           <td width="10%" align="center">
-            {item.total}
+            {{ item.total }}
           </td>
           <td width="10%" align="center">
-            {item.total_exit}
+            {{ item.total_exit }}
           </td>
           <td width="10%" align="center">
-            {item.total_in}
+            {{ item.total_in }}
           </td>
           <td width="10%" align="center">
-            {item.total_out}
+            {{ item.total_out }}
           </td>
         </tr>
       </table>
@@ -59,11 +64,24 @@ export default {
   components: {
     Container,
   },
+  props: {},
+  data() {
+    return {
+      tableData: [],
+    };
+  },
   created() {},
-  mounted() {},
+  async mounted() {
+    let querCity = this.$route.params.city + "";
+    querCity = querCity === "省直部属" ? querCity : querCity.slice(0, -1);
+    let res = await this.$axios.get("/maps/api.json?city=" + querCity);
+    console.log(querCity);
+    this.tableData = res.data.data.units;
+    this.tableData = this.tableData.concat(this.tableData);
+  },
 };
 </script>
 
 <style scoped>
-    @import "./stationInfo.css";
+@import "../styles/stationInfo.css";
 </style>
