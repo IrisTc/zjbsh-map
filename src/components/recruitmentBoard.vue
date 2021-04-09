@@ -44,16 +44,15 @@ export default {
   components: {
     Container,
   },
-  props: {},
+  props: {
+    infos: Array
+  },
   data() {
     return {
-      tableData: [],
+      tableData: this.infos,
     };
   },
-  created() {},
   async mounted() {
-    let res = await this.$axios.get("/maps/api.json");
-    this.tableData = res.data.data.infos;
     this.tableData = this.tableData.concat(this.tableData);
 
     let c1 = document.getElementById("scroll-table");
