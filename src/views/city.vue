@@ -4,8 +4,12 @@
       id="stationChart"
       :city="city"
       :charts="cityCharts"
+      @clickStation="changeInfo"
     ></city-station-chart>
     <station-info id="stationInfo" :units="units"></station-info>
+    <!-- <button id="all-button" @click="handleAll">
+      全部
+    </button> -->
   </div>
 </template>
 
@@ -24,6 +28,7 @@ export default {
       city: "",
       cityCharts: [],
       units: [],
+      allUnits: [],
     };
   },
   watch: {
@@ -33,6 +38,7 @@ export default {
       let res = await this.$axios.get("/maps/api.json?city=" + this.city);
       this.cityCharts = res.data.data.charts;
       this.units = res.data.data.units;
+      this.allUnits = this.units;
     },
   },
   async created() {
@@ -41,6 +47,18 @@ export default {
     let res = await this.$axios.get("/maps/api.json?city=" + this.city);
     this.cityCharts = res.data.data.charts;
     this.units = res.data.data.units;
+    this.allUnits = this.units;
+  },
+  methods: {
+    changeInfo(data) {
+      let city = data.city
+      this.units = this.allUnits.filter((item)=>{
+        return item.country == city
+      })
+    },
+    handleAll() {
+      this.units = this.allUnits
+    }
   },
 };
 </script>
