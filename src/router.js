@@ -7,8 +7,8 @@ Vue.use(Router);
 
 export default new Router({
     routes: [
-        { name:'index', path: '/', component: Index },
-        { name:'city', path: '/city', component: City}
+        { path: '/', component: Index },
+        { path: '/city', component: City}
     ]
   });
   

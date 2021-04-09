@@ -1,25 +1,43 @@
 <template>
   <div>
+    <station-chart id="stationChart" :charts="charts"></station-chart>
+    <type-chart id="entityStatistic" :countByType="countByType"></type-chart>
     <recruitment-board id="recruitmentBoard"></recruitment-board>
-    <platform-statistic id="platformStatistic"></platform-statistic>
+    <topic-board id="platformStatistic" :countByTopic="countByTopic"></topic-board>
   </div>
 </template>
 
 <script>
-import RecruitmentBoard from "./recruitmentBoard.vue";
-import PlatformStatistic from "./platformStatistic.vue";
+import axios from 'axios'
+import StationChart from '../components/stationChart.vue';
+import TypeChart from '../components/typeChart.vue';
+import RecruitmentBoard from "../components/recruitmentBoard.vue";
+import TopicBoard from "../components/topicBoard.vue";
 
 export default {
   name: "index",
   components: {
+    StationChart,
+    TypeChart,
     RecruitmentBoard,
-    PlatformStatistic,
+    TopicBoard,
   },
   data() {
-    return {};
+    return {
+      countByTopic: [],
+      countByType: [],
+      charts: []
+    }
   },
-  created() {},
-  mounted() {},
+  async created() {
+    let res = await axios.get("/maps/api.json");
+    this.countByTopic = res.data.data.countByTopic
+    this.countByType = res.data.data.countByType
+    this.charts = res.data.data.charts
+    // console.log(this.charts)
+  },
+  mounted() {
+  },
 };
 </script>
 

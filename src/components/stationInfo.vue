@@ -72,7 +72,7 @@ export default {
   },
   created() {},
   async mounted() {
-    let querCity = this.$route.params.city + "";
+    let querCity = this.$route.query.city + "";
     querCity = querCity === "省直部属" ? querCity : querCity.slice(0, -1);
     let res = await this.$axios.get("/maps/api.json?city=" + querCity);
     console.log(querCity);
