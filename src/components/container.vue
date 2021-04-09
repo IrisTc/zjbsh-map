@@ -104,7 +104,8 @@ export default {
 .container-title {
   background-color: #000c3b;
   margin: -18px auto 0 auto;
-  color: #83c7e3;
+  color: #d5e7f3;
+  font-weight: bold;
   font-size: 20px;
   width: 80%;
   display: flex;

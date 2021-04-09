@@ -1,6 +1,19 @@
 #stationInfo {
-    position: absolute;
-    bottom: 3%;
-    right: 3%;
-  }
-  
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+}
+
+#all-button {
+  position: absolute;
+  bottom: 42%;
+  right: 10%;
+  color: #26c6f0;
+  cursor: pointer;
+  background-color: transparent;
+  margin: 0;
+  border: 0;
+  border: 2px solid #487bff;
+  border-radius: 5px;
+  font-size: 18px;
+}

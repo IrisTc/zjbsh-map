@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Container from "@/components/container.vue";
+import Container from "./container.vue";
 
 export default {
   name: "platformStatistic",
@@ -38,7 +38,7 @@ export default {
             data: [
               { value: 0, name: "国家级工作站" },
               { value: 0, name: "浙江省级工作站" },
-              { value: 0, name: "流动站" }
+              { value: 0, name: "流动站" },
             ],
             emphasis: {
               itemStyle: {
@@ -71,10 +71,18 @@ export default {
     drawChart() {
       let myChart = this.$echarts.init(document.getElementById("entity"));
       let type = this.option.series[0].data;
-      type[0].value = this.type['1']
-      type[1].value = this.type['2']
-      type[2].value = this.type['3']
+      type[0].value = this.type["1"];
+      type[1].value = this.type["2"];
+      type[2].value = this.type["3"];
       myChart.setOption(this.option);
+      myChart.on("click", (res) => {
+        if(res.name=='流动站') {
+          window.open('http://zjbsh.zjhwrc.com/posts/153')
+        }
+      });
+      window.addEventListener("resize", function () {
+        myChart.resize();
+      });
     },
   },
 };

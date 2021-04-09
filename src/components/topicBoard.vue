@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Container from "@/components/container.vue";
+import Container from "./container.vue";
 
 export default {
   name: "platformStatistic",

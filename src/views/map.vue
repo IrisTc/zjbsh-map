@@ -2,16 +2,16 @@
   <div>
     <div id="map"></div>
     <button id="back" v-if="backBtn" @click="handleBack">
-      返回上级
+      返回
     </button>
   </div>
 </template>
 
 <script>
 import axios from "axios";
-import mapJson from "@/assets/map.json";
-import pinJson from "@/assets/pin.json";
-import { converMapData } from "@/utils/convertMapData";
+import mapJson from "../assets/map.json";
+import pinJson from "../assets/pin.json";
+import { converMapData } from "../utils/convertMapData";
 
 export default {
   name: "index",
@@ -28,7 +28,15 @@ export default {
 
     let myChart = this.$echarts.init(document.getElementById("map"));
     myChart.setOption({
-      color: ["#0a2dae", "#4cabce", "#006699"],
+      title: {
+        text: "浙江省博士后在站人数统计",
+        subtext: "",
+        left: "center",
+        textStyle: {
+          color: "#fff",
+          fontSize: 25,
+        },
+      },
       tooltip: {
         trigger: "item",
         formatter: function(params) {
@@ -120,7 +128,10 @@ export default {
     myChart.off("click");
     myChart.on("click", (res) => {
       this.backBtn = true;
-      if (this.$route.query.city !== res.name) {
+      if (this.$route.query.city === res.name) {
+        this.backBtn = false;
+        this.$router.push({ path: "/"});
+      }else{
         this.$router.push({ path: "/city", query: { city: res.name } });
       }
     });

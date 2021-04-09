@@ -40,6 +40,9 @@ export default {
   mounted() {
     let myChart = this.$echarts.init(document.getElementById("title"));
     myChart.setOption(this.titleOption);
+    window.addEventListener("resize", function() {
+      myChart.resize();
+    });
   },
 };
 </script>
