@@ -6,7 +6,7 @@
     <i class="bottomR"></i>
     <div class="container-title" >
       <b class="container-title-left">[</b>
-      <span class="container-title-content">{{ title }}</span>
+      <span class="container-title-content">{{ ititle }}</span>
       <b class="container-title-right">]</b>
     </div>
     <slot></slot>
@@ -33,7 +33,6 @@ export default {
   },
   data() {
     return {
-      title: this.ititle,
       containerStyle: {
         width: this.iwidth+'%',
         height: this.iheight+'%',

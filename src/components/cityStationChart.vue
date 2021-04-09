@@ -1,5 +1,9 @@
 <template>
+<<<<<<< HEAD
   <Container :ititle="city + '博士后工作站数据'" iwidth="52" iheight="40">
+=======
+  <Container :ititle="city+'博士后工作站数据'" iwidth="52" iheight="40">
+>>>>>>> bed6a6d2d63c2b8873d467e3ff20805a81d824e3
     <div id="cityStationChart" :style="{ height: '100%', width: '100%' }"></div>
   </Container>
 </template>
@@ -14,12 +18,15 @@ export default {
   props: ["city", "charts"],
   data() {
     return {
+<<<<<<< HEAD
       option: {},
+=======
+      option: {}
+>>>>>>> bed6a6d2d63c2b8873d467e3ff20805a81d824e3
     };
   },
   watch: {
     charts: function (newVal) {
-      console.log(this.city)
       let source = [];
       for (let key in newVal) {
         let arr = JSON.parse(key);

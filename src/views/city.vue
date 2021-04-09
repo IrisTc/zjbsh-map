@@ -10,12 +10,11 @@
 </template>
 
 <script>
-import axios from "axios";
 import CityStationChart from "../components/cityStationChart.vue";
 import StationInfo from "../components/stationInfo.vue";
 
 export default {
-  name: "city",
+  name: "cityview",
   components: {
     StationInfo,
     CityStationChart,
@@ -29,17 +28,17 @@ export default {
   },
   watch: {
     async $route() {
-      this.city = this.$route.query.city;
-      this.city = this.city === "省直部属" ? this.city : this.city.slice(0, -1);
-      let res = await axios.get("/maps/api.json?city=" + this.city);
+      let city = this.$route.query.city;
+      this.city = city === "省直部属" ? city : city.slice(0, -1);
+      let res = await this.$axios.get("/maps/api.json?city=" + this.city);
       this.cityCharts = res.data.data.charts;
       this.units = res.data.data.units;
     },
   },
   async created() {
-    this.city = this.$route.query.city;
-    this.city = this.city === "省直部属" ? this.city : this.city.slice(0, -1);
-    let res = await axios.get("/maps/api.json?city=" + this.city);
+    let city = this.$route.query.city;
+    this.city = city === "省直部属" ? city : city.slice(0, -1);
+    let res = await this.$axios.get("/maps/api.json?city=" + this.city);
     this.cityCharts = res.data.data.charts;
     this.units = res.data.data.units;
   },

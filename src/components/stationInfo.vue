@@ -25,7 +25,7 @@
 
     <div id="stationInfo-content">
       <table id="stationInfo-table" width="100%">
-        <tr v-for="(item, index) in tableData" :key="index">
+        <tr v-for="(item, index) in units" :key="index">
           <td width="40%" align="center">
             {{ item.name }}
           </td>
@@ -64,17 +64,7 @@ export default {
   components: {
     Container,
   },
-  props: [ "units" ],
-  data() {
-    return {
-      tableData: [],
-    };
-  },
-  watch: {
-    units: function(value) {
-      this.tableData = value
-    }
-  }
+  props: ['units']
 };
 </script>
 
