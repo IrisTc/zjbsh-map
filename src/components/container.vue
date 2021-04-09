@@ -107,7 +107,7 @@ export default {
   margin: -18px auto 0 auto;
   color: #83c7e3;
   font-size: 20px;
-  width: 60%;
+  width: 80%;
   display: flex;
   justify-content: space-between;
 }

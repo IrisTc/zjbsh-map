@@ -9,3 +9,15 @@
   top: 34%;
   right: 35%;
 }
+
+#stationChart {
+  position: absolute;
+  top: 12%;
+  right: 3%;
+}
+
+#entityStatistic {
+  position: absolute;
+  top: 12%;
+  right: 35%;
+}
