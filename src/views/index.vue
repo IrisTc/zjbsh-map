@@ -2,7 +2,7 @@
   <div>
     <station-chart id="stationChart" :charts="charts"></station-chart>
     <type-chart id="entityStatistic" :countByType="countByType"></type-chart>
-    <recruitment-board id="recruitmentBoard"></recruitment-board>
+    <recruitment-board id="recruitmentBoard" :infos="infos"></recruitment-board>
     <topic-board id="platformStatistic" :countByTopic="countByTopic"></topic-board>
   </div>
 </template>
@@ -33,6 +33,7 @@ export default {
     let res = await axios.get("/maps/api.json");
     this.countByTopic = res.data.data.countByTopic
     this.countByType = res.data.data.countByType
+    this.infos = res.data.data.infos
     this.charts = res.data.data.charts
     // console.log(this.charts)
   },
