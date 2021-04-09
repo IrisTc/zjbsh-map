@@ -1,5 +1,5 @@
 <template>
-  <Container :ititle="city+'博士后工作站数据'" iwidth="52" iheight="40">
+  <Container :ititle="city + '博士后工作站数据'" iwidth="52" iheight="40">
     <div id="cityStationChart" :style="{ height: '100%', width: '100%' }"></div>
   </Container>
 </template>
@@ -14,11 +14,11 @@ export default {
   props: ["city", "charts"],
   data() {
     return {
-      option: {}
+      option: {},
     };
   },
   watch: {
-    charts: function (newVal) {
+    charts: function(newVal) {
       let source = [];
       for (let key in newVal) {
         let arr = JSON.parse(key);
@@ -40,7 +40,7 @@ export default {
           height: "75%",
           width: "80%",
         },
-        color: ["#0a2dae", "#4cabce", "#006699"],
+        color: ["#91cc75", "#ED7D31", "#C00571"],
         legend: {
           data: ["国家级博士后科研工作站", "浙江省级博士后工作站"],
           right: "5%",

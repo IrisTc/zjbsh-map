@@ -4,11 +4,12 @@
   right: 3%;
   height: 5%;
   width: 94%;
+  font-weight: 10;
 }
 
 #scroll-title tr {
-  background: #1f223c;
-  color: #487bff;
+  /* background-color: none; */
+  color: #f0f8fc;  
   height: 35px;
   line-height: 35px;
   font-size: 18px;

@@ -1,6 +1,9 @@
 <template>
   <Container ititle="浙江省博士后工作站数据" iwidth="31" iheight="40">
-    <div id="provinceStationChart" :style="{ height: '100%', width: '100%' }"></div>
+    <div
+      id="provinceStationChart"
+      :style="{ height: '100%', width: '100%' }"
+    ></div>
   </Container>
 </template>
 
@@ -18,14 +21,14 @@ export default {
     };
   },
   watch: {
-    charts: function (newVal) {
+    charts: function(newVal) {
       let source = [];
       for (let key in newVal) {
         let arr = JSON.parse(key);
         let obj = {};
         obj.name = arr[1];
         let value = newVal[key];
-        obj.value = value
+        obj.value = value;
         if (arr[0] == 1) {
           obj["国家级博士后科研工作站"] = value;
         } else {
@@ -33,7 +36,7 @@ export default {
         }
         source.push(obj);
       }
-      console.log(source)
+      console.log(source);
       this.option = {
         tooltip: {},
         grid: {
@@ -42,7 +45,7 @@ export default {
           height: "75%",
           width: "80%",
         },
-        color: ["#0a2dae", "#4cabce", "#006699"],
+        color: ["#91cc75", "#ED7D31", "#C00571"],
         legend: {
           data: ["国家级博士后科研工作站", "浙江省级博士后工作站"],
           right: "10%",
@@ -92,7 +95,9 @@ export default {
   },
   methods: {
     drawChart() {
-      let myChart = this.$echarts.init(document.getElementById("provinceStationChart"));
+      let myChart = this.$echarts.init(
+        document.getElementById("provinceStationChart")
+      );
       myChart.setOption(this.option);
       window.addEventListener("resize", function() {
         myChart.resize();

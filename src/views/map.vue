@@ -128,7 +128,10 @@ export default {
     myChart.off("click");
     myChart.on("click", (res) => {
       this.backBtn = true;
-      if (this.$route.query.city !== res.name) {
+      if (this.$route.query.city === res.name) {
+        this.backBtn = false;
+        this.$router.push({ path: "/"});
+      }else{
         this.$router.push({ path: "/city", query: { city: res.name } });
       }
     });
