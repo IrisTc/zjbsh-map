@@ -10,7 +10,7 @@
     <div id="scroll-content">
       <div id="scroll-table">
         <table>
-          <tr v-for="(item, index) in tableData" :key="index">
+          <tr v-for="(item, index) in infos" :key="index">
             <td width="40%" align="center">
               <a href="#" onClick="">
                 {{ item.name }}
@@ -44,17 +44,8 @@ export default {
   components: {
     Container,
   },
-  props: {
-    infos: Array
-  },
-  data() {
-    return {
-      tableData: this.infos,
-    };
-  },
-  async mounted() {
-    this.tableData = this.tableData.concat(this.tableData);
-
+  props: ["infos"],
+  mounted() {
     let c1 = document.getElementById("scroll-table");
     let ca = document.getElementById("scroll-content");
     setInterval(function st() {

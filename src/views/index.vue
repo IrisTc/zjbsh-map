@@ -26,7 +26,8 @@ export default {
     return {
       countByTopic: [],
       countByType: [],
-      charts: []
+      charts: [],
+      infos: []
     }
   },
   async created() {
