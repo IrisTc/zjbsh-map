@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Container from "@/components/container.vue";
+import Container from "./container.vue";
 
 export default {
   components: {
@@ -71,7 +71,7 @@ export default {
           axisLabel: {
             color: "#fff",
             interval: 0,
-            fontSize: 8,
+            fontSize: 12,
           },
           axisLine: {
             lineStyle: {
