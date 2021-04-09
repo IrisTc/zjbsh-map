@@ -1,5 +1,5 @@
 <template>
-  <Container :ititle="city + '博士后工作站数据'" iwidth="52" iheight="40">
+  <Container :ititle="title" iwidth="52" iheight="40">
     <div id="cityStationChart" :style="{ height: '100%', width: '100%' }"></div>
   </Container>
 </template>
@@ -15,10 +15,12 @@ export default {
   data() {
     return {
       option: {},
+      title: this.city+'博士后工作站数据'
     };
   },
   watch: {
     charts: function (newVal) {
+      console.log(this.city)
       let source = [];
       for (let key in newVal) {
         let arr = JSON.parse(key);
