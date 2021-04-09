@@ -94,7 +94,10 @@ export default {
         document.getElementById("cityStationChart")
       );
       myChart.setOption(this.option);
-      window.addEventListener("resize", function() {
+      myChart.on("click", (res) => {
+        this.$emit('clickStation', {city: res.name})
+      });
+      window.addEventListener("resize", function () {
         myChart.resize();
       });
     },
