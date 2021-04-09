@@ -94,6 +94,9 @@ export default {
     drawChart() {
       let myChart = this.$echarts.init(document.getElementById("provinceStationChart"));
       myChart.setOption(this.option);
+      window.addEventListener("resize", function() {
+        myChart.resize();
+      });
     },
   },
 };

@@ -2,7 +2,7 @@
   <div>
     <div id="map"></div>
     <button id="back" v-if="backBtn" @click="handleBack">
-      返回上级
+      返回
     </button>
   </div>
 </template>
