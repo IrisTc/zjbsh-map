@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Container from "@/components/container.vue";
+import Container from "./container.vue";
 
 export default {
   components: {
@@ -43,7 +43,7 @@ export default {
         color: ["#0a2dae", "#4cabce", "#006699"],
         legend: {
           data: ["国家级博士后科研工作站", "浙江省级博士后工作站"],
-          right: "10%",
+          right: "5%",
           top: "5%",
           textStyle: {
             color: "#fff",
@@ -71,7 +71,7 @@ export default {
           axisLabel: {
             color: "#fff",
             interval: 0,
-            fontSize: 8,
+            fontSize: 12,
           },
           axisLine: {
             lineStyle: {
@@ -94,6 +94,9 @@ export default {
         document.getElementById("cityStationChart")
       );
       myChart.setOption(this.option);
+      window.addEventListener("resize", function() {
+        myChart.resize();
+      });
     },
   },
 };

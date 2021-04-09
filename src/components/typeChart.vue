@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import Container from "@/components/container.vue";
+import Container from "./container.vue";
 
 export default {
   name: "platformStatistic",
@@ -75,6 +75,9 @@ export default {
       type[1].value = this.type['2']
       type[2].value = this.type['3']
       myChart.setOption(this.option);
+      window.addEventListener("resize", function() {
+        myChart.resize();
+      });
     },
   },
 };
